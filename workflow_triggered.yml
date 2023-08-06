@@ -1,7 +1,7 @@
 name: workflow_triggered
 on:
   repository_dispatch:
-    types: [update-submodules]
+    types: [update-submodules-famaf]
 jobs:
   updateSubmodules:
     runs-on: ubuntu-latest

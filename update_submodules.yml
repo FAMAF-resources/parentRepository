@@ -1,9 +1,16 @@
 name: 'Update Submodule Action'
 on:
   schedule:
-    - cron:  '0 * * * *'
+    - cron: '0 0 * * *'
+    - cron: '0 12 * * *'
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   repository_dispatch:
-    types: famaftestupdate
+    types: update-submodules-famaf
 
 jobs:
   famaftestupdate:

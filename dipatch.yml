@@ -8,6 +8,7 @@ jobs:
       matrix:
         repositories: [
           'FAMAF-resources/testWorkflows'
+          'FAMAF-resources/childRepository'
         ]
     steps:
       - name: Push to repo
