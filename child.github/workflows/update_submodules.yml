@@ -13,7 +13,7 @@ on:
       - main
 
 env:
-  SHOULD_COMMIT: 'false'
+  SHOULD_COMMIT: ''
 
 jobs:
   famaftestupdate:
@@ -34,17 +34,19 @@ jobs:
         id: status
         run: |
           echo $(git status -s)
-          if [[ $(git status --porcelain) ]]; then
+          if [[ $(git status -s) ]]; then
             export SHOULD_COMMIT=true
           else
             export SHOULD_COMMIT=false
           fi
           echo "SHOULD_COMMIT=$SHOULD_COMMIT" >> $GITHUB_ENV
+          echo "SHOULD_COMMIT=$SHOULD_COMMIT"
 
       - name: Config git
         if: ${{ env.SHOULD_COMMIT == 'true' }}
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "noreply@github.com"
+          source ./parentRepository/scripts/update_w_from_parent.sh
           git commit -am "[BOT] Update submodules at $(date "+DATE: %Y-%m-%d TIME: %H:%M:%S")"
           git push

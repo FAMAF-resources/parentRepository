@@ -17,4 +17,3 @@ cp -r parentRepository/child.github/* .github/
 # cp utilsWorkflows/labeler.yml .github/
 # cp utilsWorkflows/list_auto_assign.yml .github/
 echo -e '\nConfiguracion completa.'
-exit 1
