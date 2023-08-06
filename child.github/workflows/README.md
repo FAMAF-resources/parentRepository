@@ -4,7 +4,3 @@
 [childRepository](https://github.com/FAMAF-resources/childRepository)
 
 ## .github/
-
-# Utils to .github/
-
-[utilsWorkflows](https://github.com/FAMAF-resources/utilsWorkflows)
