@@ -23,7 +23,8 @@ jobs:
           submodules: recursive
           # submodules: true
       - name: Update submodules
-        run: git submodule update --init --recursive --checkout -f --remote -- "${{github.event.client_payload.module}}"
+        run: git submodule update --init --recursive --checkout -f --remote
+        #-- "${{github.event.client_payload.module}}"
 
       - name: Update status
         id: status
