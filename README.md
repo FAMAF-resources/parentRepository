@@ -8,3 +8,5 @@
 # Utils to .github/
 
 [utilsWorkflows](https://github.com/FAMAF-resources/utilsWorkflows)
+
+# Test workflow
