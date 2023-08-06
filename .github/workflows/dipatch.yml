@@ -16,7 +16,7 @@ jobs:
         with:
           token: ${{ secrets.WORKFLOW_TOKEN }}
           repository: ${{ matrix.repositories }}
-          event-type: update
+          event-type: update-submodules-famaf
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "module": "owner/submodule", "branch": "main"}'
 
           # 'FAMAF-resources/Modulo_de_ingles-FAMAF',

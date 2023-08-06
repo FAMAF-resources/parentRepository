@@ -1,7 +1,8 @@
-name: workflow_triggered
+name: 'Workflow triggered from parent'
 on:
   repository_dispatch:
     types: [update-submodules-famaf]
+
 jobs:
   updateSubmodules:
     runs-on: ubuntu-latest

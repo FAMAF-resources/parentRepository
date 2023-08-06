@@ -10,7 +10,7 @@ on:
     branches:
       - main
   repository_dispatch:
-    types: update-submodules-famaf
+    types: [update-submodules-famaf]
 
 env:
   STATUS_COMMITS: ''
@@ -24,22 +24,16 @@ jobs:
         with:
           token: ${{ secrets.WORKFLOW_TOKEN }}
           submodules: recursive
-          # submodules: true
       - name: Update submodules
         run: git submodule update --init --recursive --checkout -f --remote
-        #-- "${{github.event.client_payload.module}}"
 
       - name: Update status
         id: status
         run: |
           echo "status=$(git status -s)" >> $STATUS_COMMITS
-        # $GITHUB_OUTPUT
-        # echo "::set-output name={status}::{status}"
-        # echo "::set-output name=status::$(git status -s)"
 
       - name: Config git
         if: $STATUS_COMMITS != ''
-        # if: ${{ steps.status.outputs.status }}
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "noreply@github.com"
