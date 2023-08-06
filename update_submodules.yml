@@ -1,5 +1,7 @@
 name: 'Update Submodule Action'
 on:
+  repository_dispatch:
+    types: [update-submodules-famaf]
   schedule:
     - cron: '0 0 * * *'
     - cron: '0 12 * * *'
@@ -9,8 +11,6 @@ on:
   pull_request:
     branches:
       - main
-  repository_dispatch:
-    types: [update-submodules-famaf]
 
 env:
   STATUS_COMMITS: ''
@@ -19,6 +19,9 @@ jobs:
   famaftestupdate:
     name: Update submodules
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v3
         with:
