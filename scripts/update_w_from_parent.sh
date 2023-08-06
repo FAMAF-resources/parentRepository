@@ -8,9 +8,10 @@ folderToSearch='.github'
 
 echo -e 'Running parent update files script'
 pwd
-echo -e 'Creando carpeta .github/\n'
+echo -e 'Creating .github/ folder\n'
 mkdir -p .github/
-echo -e 'Configurando workflows...\n'
+echo -e 'Updating workflows...\n'
+ls -r parentRepository/child.github
 cp -r parentRepository/child.github/* .github/
 # mv useFolder/ .github/workflows
 # rm .github/workflows/list_auto_assign.yml
