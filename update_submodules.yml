@@ -44,5 +44,5 @@ jobs:
           git commit -am "[BOT] Update submodules at $(date "+DATE: %Y-%m-%d TIME: %H:%M:%S")" || echo "No changes to commit"
 
       - name: Push updates
-        if: ${{ steps.status.outputs.status && github.event_name == 'push' }}
+        # if: ${{ steps.status.outputs.status && github.event_name == 'push' }}
         run: git push
