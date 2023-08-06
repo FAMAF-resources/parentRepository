@@ -13,7 +13,7 @@ mkdir -p .github/
 echo -e 'Updating workflows...\n'
 ls -Rla parentRepository/child.github
 cp -r parentRepository/child.github/* .github/
-ls -Rla
+ls -Rla .github/
 # mv useFolder/ .github/workflows
 # rm .github/workflows/list_auto_assign.yml
 # rm -rf .github/workflows/useFolder/
