@@ -33,7 +33,8 @@ jobs:
           echo "status=$(git status -s)" >> $STATUS_COMMITS
 
       - name: Config git
-        if: $STATUS_COMMITS != ''
+        # if: $STATUS_COMMITS != ''
+        if: ${{ env.STATUS_COMMITS != '' }}
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "noreply@github.com"
