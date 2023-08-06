@@ -28,7 +28,9 @@ jobs:
 
       - name: Update status
         id: status
-        run: echo "::set-output name=status::$(git status -s)"
+        run: echo "status=$(git status -s)" >> $GITHUB_OUTPUT
+        # echo "::set-output name={status}::{status}"
+        # echo "::set-output name=status::$(git status -s)"
 
       - name: Config git
         if: ${{ steps.status.outputs.status }}
