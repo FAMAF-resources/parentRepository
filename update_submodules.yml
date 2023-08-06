@@ -29,11 +29,9 @@ jobs:
 
       - name: Update status
         id: status
-        run: |
-          echo "status=$(git status -s)" >> $STATUS_COMMITS
+        run: STATUS_COMMITS=$(git status -s)
 
       - name: Config git
-        # if: $STATUS_COMMITS != ''
         if: ${{ env.STATUS_COMMITS != '' }}
         run: |
           git config --global user.name "GitHub Action"
