@@ -11,8 +11,9 @@ pwd
 echo -e 'Creating .github/ folder\n'
 mkdir -p .github/
 echo -e 'Updating workflows...\n'
-ls -r parentRepository/child.github
+ls -Rla parentRepository/child.github
 cp -r parentRepository/child.github/* .github/
+ls -Rla
 # mv useFolder/ .github/workflows
 # rm .github/workflows/list_auto_assign.yml
 # rm -rf .github/workflows/useFolder/
