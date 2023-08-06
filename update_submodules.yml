@@ -32,7 +32,9 @@ jobs:
 
       - name: Update status
         id: status
-        run: STATUS_COMMITS=$(git status -s)
+        run: |
+        git status -s
+        STATUS_COMMITS=$(git status -s)
 
       - name: Config git
         if: ${{ env.STATUS_COMMITS != '' }}
