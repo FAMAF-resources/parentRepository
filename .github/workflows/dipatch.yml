@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         repositories: [
-          'FAMAF-resources/testWorkflows'
+          'FAMAF-resources/testWorkflows',
           'FAMAF-resources/childRepository'
         ]
     steps:
