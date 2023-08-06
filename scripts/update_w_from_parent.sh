@@ -6,6 +6,8 @@
 
 folderToSearch='.github'
 
+echo -e 'Running parent update files script'
+pwd
 echo -e 'Creando carpeta .github/\n'
 mkdir -p .github/
 echo -e 'Configurando workflows...\n'
