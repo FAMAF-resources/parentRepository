@@ -49,5 +49,5 @@ jobs:
           git config --global user.email "noreply@github.com"
           source ./parentRepository/scripts/update_w_from_parent.sh
           git add .github
-          git commit -m "[BOT] Update submodules at $(date "+DATE: %Y-%m-%d TIME: %H:%M:%S")"
+          git commit -am "[BOT] Update submodules at $(date "+DATE: %Y-%m-%d TIME: %H:%M:%S")"
           git push
